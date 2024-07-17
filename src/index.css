@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -10,9 +10,9 @@
     --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
-    --primary: 220.9 39.3% 11%;
+    --primary: 228, 50%, 40%;
     --primary-foreground: 210 20% 98%;
-    --secondary: 220 14.3% 95.9%;
+    --secondary: 82, 57%, 50%;
     --secondary-foreground: 220.9 39.3% 11%;
     --muted: 220 14.3% 95.9%;
     --muted-foreground: 220 8.9% 46.1%;
@@ -65,5 +65,80 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White background */
+    --foreground: 220 14% 10%; /* Dark text */
+    --card: 0 0% 100%; /* White for cards */
+    --card-foreground: 220 14% 10%; /* Dark text for cards */
+    --popover: 0 0% 100%; /* White for popover */
+    --popover-foreground: 220 14% 10%; /* Dark text for popover */
+    --primary: 228 50% 40%; /* HSL for primary */
+    --primary-foreground: 210 20% 98%; /* White text for primary */
+    --secondary: 82 57% 50%; /* HSL for secondary */
+    --secondary-foreground: 210 20% 98%; /* White text for secondary */
+    --muted: 220 14.3% 95.9%; /* Muted color */
+    --muted-foreground: 220 8.9% 46.1%; /* Muted foreground */
+    --accent: 220 14.3% 95.9%; /* Accent color */
+    --accent-foreground: 210 20% 98%; /* Default accent foreground */
+    --accent-foreground-hover: 0 0% 0%; /* Black for accent foreground on hover */
+    --destructive: 0 84.2% 60.2%; /* Destructive color */
+    --destructive-foreground: 210 20% 98%; /* White for destructive */
+    --border: 220 13% 91%; /* Border color */
+    --input: 220 13% 91%; /* Input background color */
+    --ring: 224 71.4% 4.1%; /* Ring color */
+    --radius: 0.5rem; /* Border radius */
+    --chart-1: 12 76% 61%; /* Chart color 1 */
+    --chart-2: 173 58% 39%; /* Chart color 2 */
+    --chart-3: 197 37% 24%; /* Chart color 3 */
+    --chart-4: 43 74% 66%; /* Chart color 4 */
+    --chart-5: 27 87% 67%; /* Chart color 5 */
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%; /* Dark background */
+    --foreground: 210 20% 98%; /* Light text */
+    --card: 224 71.4% 4.1%; /* Dark card background */
+    --card-foreground: 210 20% 98%; /* Light text for cards */
+    --popover: 224 71.4% 4.1%; /* Dark popover */
+    --popover-foreground: 210 20% 98%; /* Light text for popover */
+    --primary: 210 20% 98%; /* Light primary color */
+    --primary-foreground: 220.9 39.3% 11%; /* Dark text for primary */
+    --secondary: 82 57% 50%; /* Darker secondary color in dark mode */
+    --secondary-foreground: 210 20% 98%; /* White text for secondary */
+    --muted: 215 27.9% 16.9%; /* Muted color in dark mode */
+    --muted-foreground: 217.9 10.6% 64.9%; /* Muted foreground in dark mode */
+    --accent: 215 27.9% 16.9%; /* Accent color in dark mode */
+    --accent-foreground: 210 20% 98%; /* Accent foreground in dark mode */
+    --destructive: 0 62.8% 30.6%; /* Destructive color in dark mode */
+    --destructive-foreground: 210 20% 98%; /* Light for destructive in dark mode */
+    --border: 215 27.9% 16.9%; /* Dark border color */
+    --input: 215 27.9% 16.9%; /* Dark input background */
+    --ring: 216 12.2% 83.9%; /* Ring color in dark mode */
+    --chart-1: 220 70% 50%; /* Chart color 1 in dark mode */
+    --chart-2: 160 60% 45%; /* Chart color 2 in dark mode */
+    --chart-3: 30 80% 55%; /* Chart color 3 in dark mode */
+    --chart-4: 280 65% 60%; /* Chart color 4 in dark mode */
+    --chart-5: 340 75% 55%; /* Chart color 5 in dark mode */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground; /* Apply white background */
+  }
+  
+  /* Apply hover styles */
+  .hover\:accent-foreground:hover {
+    color: hsl(var(--accent-foreground-hover));
   }
 }
